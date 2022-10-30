@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #ABEDD8; */
+    background-color: #C8D9EB;
+}
+
+.game-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-block: 3rem;
+    gap: 5vw;
+}
+
+.game-area>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.game-area>div:nth-child(2) {
+    height: unset;
+}
+
+.fa-solid {
+    font-size: 6rem;
+    color: #48466D;
+}
+
+.result>p {
+    font-weight: bold;
+}
+
+span,
+h1,
+.player-options>h2 {
+    color: #3D84A8;
+}
+
+.play-again {
+    border: none;
+    outline: none;
+    background-color: #3D84A8;
+    color: white;
+    padding: .5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 100vmax;
+    display: none;
+}
+
+
+.fist {
+    display: inline-block !important;
+    margin-top: 2rem;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.computer-icons .fist {
+    rotate: 90deg;
+}
+
+.computer-icons .fa-hand-scissors {
+    transform: rotateY(180deg);
+}
+
+.player-icons .fist {
+    rotate: 270deg;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.player-options>button {
+    margin-right: 1rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.player-options button:focus>i {
+    color: #ff5252;
+}
+
+.animation {
+    animation: shake 1s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.scores {
+    position: fixed;
+    top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100vw;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+
+/* animation */
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(4px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-8px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(8px, 0, 0);
+    }
+}
